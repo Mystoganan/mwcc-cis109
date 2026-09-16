@@ -1,16 +1,19 @@
 # Brody Melanson, Intro to Programming, Lab 2
 
 #Information Gathering
-name = input("Enter your codename:")
-age = input("Enter your age:")
-experience = input("How many years did you train?")
-color = input("Enter the color you like the most?")
-gadget_num = input("Enter your current amount of gadgets:")
-time = input("Enter time left in mission in minutes:")
+name = input("Enter your codename: ")
+age = input("Enter your age: ")
+experience = input("How many years did you train? ")
+color = input("Enter the color you like the most? ")
+gadget_num = input("Enter your current amount of gadgets: ")
+time = input("Enter time left in mission in minutes: ")
 
 #Calculations
 training_percentage = int(experience) / int(age) * 100
-gadget_density = int(gadget_num) / int(experience)
+if(experience == "0"):
+    gadget_density = int(gadget_num)
+else:
+    gadget_density = int(gadget_num) / int(experience)
 mission_seconds = int(time) * 60
 mission_time_remaining = int(time) - 7
 mission_code = "{}{}{}".format(name, age, color)
@@ -25,7 +28,7 @@ print("Mission Breifing")
 print("{} {}".format("Codename:", name))
 print("{} {}".format("Mission Code:", mission_code))
 print("{} {}".format("Age:", age))
-print("{} {}".format("Training Experience:", experience))
+print("{} {} {}".format("Training Experience:", experience, "years"))
 print("{} {}{}".format("Training Percentage:", int(training_percentage), "% of your life"))
 print("{} {}".format("Number of Gadgets:", gadget_num))
 print("{} {} {}".format("Density of Gadgets:", gadget_density, "per year of training"))
