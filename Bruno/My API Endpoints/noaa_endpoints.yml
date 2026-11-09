@@ -1,0 +1,17 @@
+info:
+  name: noaa_endpoints
+  type: http
+
+http:
+  method: GET
+  url: https://api.weather.gov/points/42.5763523,-71.9952737
+  headers:
+    - name: User-Agent
+      value: MWCC-Melanson
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
