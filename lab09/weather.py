@@ -23,11 +23,6 @@ def get_coordinates(city):
 
     data = response.json()[0]
 
-
-    print(f"Status Code: {response.status_code}")
-    print(f"Lattitude: {data['lat']}")
-    print(f"Longitude: {data['lon']}")
-
     return (data['lat'], data['lon'])
 
 def get_noaa_endpoints(lat,lon):
@@ -43,8 +38,6 @@ def get_noaa_endpoints(lat,lon):
     )
 
     data = response.json()
-
-    print(data["properties"]["forecast"])
 
     return data["properties"]["forecast"]
 
